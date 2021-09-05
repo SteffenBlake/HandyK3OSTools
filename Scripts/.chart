@@ -8,6 +8,7 @@ function chart() {
   sudo cp -v ${config} /var/lib/rancher/k3s/server/manifests
   sudo cp -v ${chart} /var/lib/rancher/k3s/server/manifests
 }
+
 function unchart() {
   sudo -v
   sudo kubectl delete HelmChart ${1}
