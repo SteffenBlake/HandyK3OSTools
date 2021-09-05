@@ -1,0 +1,4 @@
+#!/bin/bash
+function finalize() {
+  kubectl patch $1 -p '{"metadata":{"finalizers": []}}' --type=merge
+}

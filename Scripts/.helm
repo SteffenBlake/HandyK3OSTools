@@ -1,0 +1,14 @@
+#!/bin/bash
+function helm() {
+  sudo -v
+  repo=${1:?x}
+  chart=${2:?x}
+  projectDir=/home/${chart}
+  chartDir=${projectDir}/{char}.yaml
+  configDir=${projectDir}/{chart}-config.yaml
+  sudo mkdir -v ${projectDir}
+  sudo cp -v /home/templates/HelmChart.yaml ${chartDir}
+  sudo cp -v /home/templates/HelmChartConfig.yaml ${configDir}
+  sudo sed -i -e "s;%REPO%;${repo};g" -e "s;%CHART%;${chart};g" ${chartDir}
+  sudo sed -i -e "s;%CHART%;${chart};g" ${configDir}
+}

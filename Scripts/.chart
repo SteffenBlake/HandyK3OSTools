@@ -1,0 +1,17 @@
+#!/bin/bash
+function chart() {
+  sudo -v
+  kc namespace ${1}-system
+  dir=/home/${1}/${1}
+  config=${dir}-config.yaml
+  chart=${dir}.yaml
+  sudo cp -v ${config} /var/lib/rancher/k3s/server/manifests
+  sudo cp -v ${chart} /var/lib/rancher/k3s/server/manifests
+}
+function unchart() {
+  sudo -v
+  sudo kubectl delete HelmChart ${1}
+  sudo kubectl delete HelmChartConfig ${1}
+  sudo rm -v /var/lib/rancher/k3s/server/manifests/${1}.yaml
+  sudo rm -v /var/lib/rancher/k3s/server/manifests/${1}-config.yaml
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+export TOOLSREPO="https://github.com/SteffenBlake/HandyK3OSTools/archive/refs/heads/main.tar.gz"
+function get-tools() {
+    sudo -v
+    sudo wget -c $TOOLSREPO | tar --one-top-level=~/
+    sudo chmod 755 ~/
+}
