@@ -1,0 +1,8 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: %CHART%
+  namespace: kube-system
+spec:
+  valuesContent: |-
+    key: value

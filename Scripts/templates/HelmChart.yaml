@@ -1,0 +1,9 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: %CHART%
+  namespace: kube-system
+spec:
+  repo: %REPO%
+  chart: %CHART%
+  targetNamespace: %CHART%-system
