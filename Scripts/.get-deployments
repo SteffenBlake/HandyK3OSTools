@@ -6,7 +6,7 @@ function get-deployments() {
     sudo rm -R /home/Deployments
     sudo mkdir /temp
     sudo wget $DEPLOYREPO -O /temp/main.tar.gz
-    sudo tar xvf /temp/main.tar.gz SailorKube-main/Deployments -C /home --strip-components=2
+    sudo tar xvf /temp/main.tar.gz SailorKube-main/home/Deployments -C /home --strip-components=2
     sudo rm -R /temp
     sudo chmod 755 -R /home/Deployments
 
@@ -17,7 +17,7 @@ function get-secrets() {
     sudo -v
     sudo mkdir /temp
     sudo wget $DEPLOYREPO -O /temp/main.tar.gz
-    sudo tar xvf /temp/main.tar.gz SailorKube-main/Secrets -C /home --strip-components=2 --skip-old-files
+    sudo tar xvf /temp/main.tar.gz SailorKube-main/home/Secrets -C /home --strip-components=2 --skip-old-files
     sudo rm -R /temp
     sudo chmod 755 -R /home/Secrets
 
