@@ -5,3 +5,4 @@ source ~/.helm
 source ~/.namespace
 source ~/.get-tools
 source ~/.get-deployments
+source ~/.session
