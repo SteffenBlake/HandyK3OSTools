@@ -1,0 +1,11 @@
+#!/bin/bash
+function samba-session() {
+  # store original namespace before modifying
+  nmspc=$(kubectl config view --minify --output 'jsonpath={..namespace}')
+
+  # open sh session with samba pod
+  sh-session samba-app-0 samba
+
+  # revert to original namespace
+  namespace $nmspc
+}

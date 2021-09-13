@@ -6,3 +6,4 @@ source ~/.namespace
 source ~/.get-tools
 source ~/.get-deployments
 source ~/.session
+source ~/.samba
