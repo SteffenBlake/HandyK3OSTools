@@ -12,3 +12,4 @@ alias everything="kubectl api-resources --verbs=list --namespaced -o name   | xa
 alias apply="kubectl apply -f"
 alias create="kubectl create -f"
 alias delete="kubectl delete -f"
+alias rollout="kubectl rollout restart"
